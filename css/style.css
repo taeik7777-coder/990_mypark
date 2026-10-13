@@ -497,7 +497,7 @@ dd {
 
 .drop-card__save-text {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   gap: 6px;
   white-space: nowrap;
   font-size: 17px;
@@ -533,6 +533,7 @@ dd {
   stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
+  align-self: center;
 }
 
 /* 라운딩 요금제 가격 */
