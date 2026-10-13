@@ -18,6 +18,32 @@
   // 카운트 중 표시 단위(10만원) – 1억 → 9,900만 구간이 끊기지 않고 자연스럽게 이어짐
   const stepRound = (v) => Math.round(v / 10) * 10;
 
+  // ---- Analytics (GA4 + Clarity) 이벤트 기록 ----
+  const track = (name, params = {}) => {
+    try {
+      if (typeof window.gtag === 'function') window.gtag('event', name, params);
+      if (typeof window.clarity === 'function') window.clarity('event', name);
+    } catch (_) { /* 분석 도구 오류가 사이트 동작에 영향 주지 않도록 */ }
+  };
+
+  // 상담 버튼 클릭 (어느 버튼인지 구분)
+  const CTA_LABELS = {
+    'nav-cta': '상단_창업상담',
+    'hero-cta-contact': '히어로_무료상담',
+    'hero-cta-sim': '히어로_절감액계산',
+    'sim-cta': '계산기_상담받기',
+  };
+  Object.entries(CTA_LABELS).forEach(([id, label]) => {
+    const btn = document.getElementById(id);
+    if (btn) btn.addEventListener('click', () => track('cta_click', { cta: label }));
+  });
+
+  // 전화·이메일 링크 클릭
+  document.querySelectorAll('a[href^="tel:"]').forEach((a) =>
+    a.addEventListener('click', () => track('phone_click')));
+  document.querySelectorAll('a[href^="mailto:"]').forEach((a) =>
+    a.addEventListener('click', () => track('email_click')));
+
   /** 만원 단위 숫자를 "1억 9,500만원" 형태로 변환 */
   const fmtKRW = (manwon, suffix = '원') => {
     manwon = Math.round(manwon);
@@ -148,6 +174,12 @@
     rooms.forEach((r, i) => r.classList.toggle('on', i < n));
   };
   range.addEventListener('input', updateSim);
+  // 계산기 사용 (슬라이더를 놓을 때 기록, 첫 사용은 별도 이벤트)
+  let simUsed = false;
+  range.addEventListener('change', () => {
+    if (!simUsed) { simUsed = true; track('simulator_use'); }
+    track('simulator_set', { rooms: +range.value });
+  });
   updateSim();
 
   // ---- Contact form → Google Apps Script (메일 수신 + 구글 시트 저장) ----
@@ -223,6 +255,7 @@
       if (!out.ok) throw new Error(out.error || 'send failed');
       form.reset();
       setMsg('상담 신청이 접수되었습니다. 담당자가 빠르게 연락드리겠습니다.');
+      track('generate_lead', { marketing_agree: data.marketing });
     } catch (err) {
       console.error(err);
       setMsg('전송에 실패했습니다. 잠시 후 다시 시도하시거나 010-5647-7357로 연락 주세요.', true);

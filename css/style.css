@@ -1876,6 +1876,10 @@ input[type="range"]::-moz-range-thumb {
   color: var(--text-mute);
 }
 
+.footer__info .footer__notice + .footer__copy {
+  margin-top: 6px;
+}
+
 /* ---------- Reveal ---------- */
 .reveal {
   opacity: 0;
