@@ -114,19 +114,7 @@
     }, 1100);
   }
 
-  // ---- Generic number counters ----
-  const counterIO = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      const to = +(el.dataset.to || el.dataset.count);
-      animate(0, to, el.id === 'saving-counter' ? 2400 : 1600, (v) => {
-        el.textContent = Math.round(v).toLocaleString('ko-KR');
-      });
-      counterIO.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-  $$('[data-count], #saving-counter').forEach((el) => counterIO.observe(el));
+  // 990만원 · 13,100만원 숫자는 카운트 없이 CSS(.num-pop)로 간단히 등장
 
   // ---- Simulator ----
   const range = $('#sim-rooms');

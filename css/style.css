@@ -1894,6 +1894,28 @@ input[type="range"]::-moz-range-thumb {
   transform: none;
 }
 
+/* 숫자 간단 등장 (카운트 애니메이션 대신) */
+.num-pop {
+  display: inline-block;
+  opacity: 0;
+}
+
+.reveal.is-in .num-pop {
+  animation: numPop .8s .25s var(--ease) forwards;
+}
+
+@keyframes numPop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1180px) {
 
@@ -2306,7 +2328,8 @@ input[type="range"]::-moz-range-thumb {
     transition: none !important;
   }
 
-  .reveal {
+  .reveal,
+  .num-pop {
     opacity: 1;
     transform: none;
   }
