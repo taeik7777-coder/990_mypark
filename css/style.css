@@ -1100,6 +1100,9 @@ dd {
   background-clip: text;
   color: transparent;
   font-variant-numeric: tabular-nums;
+  /* 그라데이션 글자가 박스 밖으로 나가 잘리지 않도록 여유 영역 확보 (레이아웃은 그대로) */
+  padding: .12em .08em .06em 0;
+  margin: -.12em -.08em -.06em 0;
 }
 
 .saving-hero__num em {
