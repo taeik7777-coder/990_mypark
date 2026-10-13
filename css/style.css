@@ -568,6 +568,7 @@ dd {
 }
 
 .drop-card__meter {
+  --pct: 43.04%;
   margin-top: 26px;
 }
 
@@ -575,11 +576,11 @@ dd {
   height: 10px;
   border-radius: 99px;
   background: rgba(255, 107, 107, .18);
-  overflow: hidden;
   position: relative;
 }
 
 .meter__fill {
+  position: relative;
   height: 100%;
   width: 100%;
   border-radius: inherit;
@@ -587,18 +588,46 @@ dd {
   transition: width 2.2s var(--ease);
 }
 
+/* 채워진 막대 끝점 표시 */
+.meter__fill::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #1fd1b0;
+  border: 3px solid #0d1a14;
+  box-shadow: 0 0 0 2px rgba(31, 209, 176, .35), 0 0 14px rgba(31, 209, 176, .65);
+  transform: translate(50%, -50%);
+}
+
 .meter__legend {
+  position: relative;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
   color: var(--text-dim);
-  margin-top: 8px;
+  margin-top: 10px;
   font-family: var(--font-num);
 }
 
+/* 57% 절감 – 끝점 바로 아래 중앙 */
 .meter__legend span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: var(--pct, 43.04%);
+  transform: translateX(-50%);
+  white-space: nowrap;
   color: var(--amber);
   font-weight: 700;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.drop-card.is-done .meter__legend span:nth-child(2) {
+  opacity: 1;
 }
 
 /* 선착순 200대 한정 – 카드 하단 안내줄 */

@@ -116,7 +116,10 @@
     const from = +el.dataset.from;
     const to = +el.dataset.to;
     setTimeout(() => {
-      meter.style.width = `${(to / from) * 100}%`;
+      const pct = `${(to / from) * 100}%`;
+      meter.style.width = pct;
+      // 57% 절감 라벨을 막대 끝점 바로 아래에 맞춤
+      meter.closest('.drop-card__meter').style.setProperty('--pct', pct);
       animate(from, to, 2200, (v) => {
         el.innerHTML = fmtKRWHtml(stepRound(v));
       }, () => {
