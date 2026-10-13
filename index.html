@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마이파크 라운딩 요금제 | 스크린파크골프 시스템 10대 9,900만원 · 선착순 200대 한정 – 커넥트 공식 총판</title>
+  <meta name="description"
+    content="스크린파크골프 마이파크 시스템, 기기당 2,300만원에서 990만원으로. 10대 기준 2억 3천만원에서 9,900만원, 1억 3,100만원 절감. 선착순 200대 한정 마이파크 라운딩 요금제를 커넥트 공식 총판에서 만나보세요." />
+  <meta property="og:title" content="마이파크 라운딩 요금제 – 시스템 10대 9,900만원 (200대 한정)" />
+  <meta property="og:description" content="시스템 기기당 2,300만원 → 990만원. 10대 기준 2억 3천만원 → 9,900만원. 선착순 200대 한정." />
+  <meta property="og:image" content="img/hero_ingame.jpg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__brand" id="nav-brand" aria-label="주식회사 커넥트 – 마이파크 라운딩 요금제 홈">
+        <img src="img/connect_logo.png" alt="CONNECT" class="nav__connect" />
+        <span class="nav__divider"></span>
+        <span class="nav__product">
+          <img src="img/mypark_logo.png" alt="MyPark" class="logo-white nav__mypark" />
+          <span class="nav__plan">라운딩 요금제</span>
+        </span>
+      </a>
+      <nav class="nav__links" aria-label="주요 메뉴">
+        <a href="#price" id="nav-price">기기 가격</a>
+        <a href="#compare" id="nav-compare">비용 비교</a>
+        <a href="#plan" id="nav-plan">요금제 구조</a>
+        <a href="#simulator" id="nav-sim">절감 계산기</a>
+        <a href="#faq" id="nav-faq">FAQ</a>
+      </nav>
+      <a href="#contact" class="btn btn--primary btn--sm" id="nav-cta">창업 상담</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="메뉴 열기"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="img/hero_ingame.jpg" alt="" />
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <h1 class="hero__title reveal">
+            <img src="img/mypark_logo.png" alt="MyPark 마이파크" class="logo-white hero__logo" />
+            <span class="hero__plan">라운딩 요금제</span>
+          </h1>
+          <p class="hero__lead reveal">
+            스크린파크골프 시스템, 이제 <strong>10대 9,900만원</strong>에 시작하세요.<br />
+            선착순 <strong>200대 한정</strong>, 창업 초기 부담을 낮춰드립니다.
+          </p>
+          <div class="hero__ctas reveal">
+            <a href="#contact" class="btn btn--primary" id="hero-cta-contact">무료 창업 상담 신청</a>
+            <a href="#simulator" class="btn btn--ghost" id="hero-cta-sim">내 매장 절감액 계산 →</a>
+          </div>
+        </div>
+
+        <!-- Price drop card -->
+        <div class="drop-card reveal" id="hero-drop-card">
+          <div class="drop-card__head">
+            <span class="chip">시스템 10대 기준</span>
+          </div>
+          <div class="drop-card__old">
+            <span class="label">기존 시스템 비용</span>
+            <span class="old-price"><span class="num">2</span>억 <span class="num">3</span>천만원<i
+                class="strike"></i></span>
+          </div>
+          <div class="drop-card__save">
+            <span class="drop-card__save-line" aria-hidden="true"></span>
+            <span class="drop-card__save-text">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v16m0 0l-6-6m6 6l6-6" />
+              </svg>
+              <b>1억 3,100만</b>원 절감
+            </span>
+            <span class="drop-card__save-line" aria-hidden="true"></span>
+          </div>
+          <div class="drop-card__new">
+            <span class="label">마이파크 라운딩 요금제</span>
+            <div class="new-price">
+              <span class="counter" id="hero-counter" data-from="23000" data-to="9900">2<span class="unit">억</span>
+                3,000<span class="unit">만원</span></span>
+            </div>
+          </div>
+          <div class="drop-card__meter">
+            <div class="meter">
+              <div class="meter__fill" id="hero-meter"></div>
+            </div>
+            <div class="meter__legend"><span>0</span><span id="hero-meter-pct">57% 절감</span><span>2억 3천</span></div>
+          </div>
+          <p class="drop-card__limit"><span class="drop-card__limit-dot" aria-hidden="true"></span>선착순 <b>200대 한정</b> 공급
+          </p>
+        </div>
+      </div>
+
+      <a href="#price" class="hero__scroll" id="hero-scroll" aria-label="아래로 스크롤">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ================= DEVICE PRICE ================= -->
+    <section class="section" id="price">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="kicker">01 · SYSTEM PRICE</p>
+          <h2>시스템 기기 1대,<br /><span class="grad">2,300만원 → 990만원</span></h2>
+          <p class="section__desc">같은 마이파크 시스템을 절반 이하 가격에. <br>라운딩 요금제는 기기값 대신 <span class="nowrap">이용한 만큼</span> 정산하는
+            구조라 초기 부담이 확 줄어듭니다.</p>
+        </header>
+
+        <div class="price-grid">
+          <article class="price-card price-card--old reveal" id="price-card-old">
+            <p class="price-card__tag">기존 구매 방식</p>
+            <p class="price-card__value"><span class="num">2,300</span><small>만원</small></p>
+            <p class="price-card__unit">시스템 기기 1대당</p>
+            <ul class="price-card__list">
+              <li>일시불 기기 구매</li>
+              <li>높은 초기 투자 비용</li>
+              <!-- <li>같은 시스템인데 기기값은 2.3배</li> -->
+            </ul>
+          </article>
+
+          <div class="price-vs reveal" aria-hidden="true">
+            <div class="price-vs__arrow">
+              <div class="price-vs__body">
+                <span class="price-vs__num"><span class="price-vs__pct">57</span><span
+                    class="price-vs__sym">%</span></span>
+                <small>DOWN</small>
+              </div>
+            </div>
+          </div>
+
+          <article class="price-card price-card--new reveal" id="price-card-new">
+            <div class="price-card__ribbon">선착순 200대 한정</div>
+            <p class="price-card__tag">마이파크 라운딩 요금제</p>
+            <p class="price-card__value"><span class="num" data-count="990">990</span><small>만원</small></p>
+            <p class="price-card__unit">시스템 기기 1대당</p>
+            <ul class="price-card__list">
+              <li><b>1대당 1,310만원</b> 절감</li>
+              <li>이용 요금 <b>인당 500원</b></li>
+              <!-- <li><b>같은 시스템</b>, 가격만 절반 이하</li> -->
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COST COMPARE ================= -->
+    <section class="section section--alt" id="compare">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="kicker">02 · SYSTEM COST</p>
+          <h2>시스템 10대 기준,<br /><span class="grad">1억 3,100만원이 줄어듭니다</span></h2>
+          <p class="section__desc">인테리어·설비 비용을 제외한 시스템 기기 비용만 비교했습니다.<br />10대 기준 <span class="nowrap">2억 3천만원이</span>
+            <span class="nowrap">9,900만원으로</span> 줄어듭니다.
+          </p>
+        </header>
+
+        <div class="compare reveal" id="compare-chart">
+          <div class="compare__row">
+            <div class="compare__label">
+              <span>기존 구매</span>
+              <strong class="muted">2억 3,000만 원</strong>
+            </div>
+            <div class="bar">
+              <div class="bar__seg bar__seg--sys-old" style="--w:100%"><span>시스템 10대 · 대당 2,300만</span></div>
+            </div>
+          </div>
+
+          <div class="compare__row">
+            <div class="compare__label">
+              <span>라운딩 요금제</span>
+              <strong class="accent" id="compare-new-total">2억 3,000만 원</strong>
+            </div>
+            <div class="bar bar--new">
+              <div class="bar__seg bar__seg--sys-new" style="--w:43%"><span id="compare-new-label">시스템 10대 · 대당
+                  2,300만</span></div>
+              <div class="bar__saved" style="--w:57%"><span>−1억 3,100만 (57%↓)</span></div>
+            </div>
+          </div>
+
+          <p class="compare__note">* 시스템 기기 비용만 비교한 금액이며, 인테리어·설비 비용은 별도입니다.<br />라운딩 요금제는 선착순 200대 한정입니다.</p>
+        </div>
+
+        <div class="saving-hero reveal">
+          <p>10대 기준 절감되는 시스템 비용</p>
+          <div class="saving-hero__num"><span class="counter-big" id="saving-counter"
+              data-to="13100">0</span><em>만원</em></div>
+          <p class="saving-hero__sub">약 <b>57%</b> 가벼워진 시스템 비용</p>
+        </div>
+
+        <div class="use-grid">
+          <article class="use-card reveal">
+            <div class="use-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+                <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+              </svg>
+            </div>
+            <h3>운영자금 확보</h3>
+            <p>오픈 초기 고정비·인건비를 여유 있게 버틸 수 있는 체력이 생깁니다.</p>
+          </article>
+          <article class="use-card reveal">
+            <div class="use-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="m3 11 18-5v12L3 14v-3z" />
+                <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+              </svg>
+            </div>
+            <h3>오픈 마케팅</h3>
+            <p>남은 예산을 지역 홍보·회원 유치에 투자해 초기 매출을 끌어올리세요.</p>
+          </article>
+          <article class="use-card reveal">
+            <div class="use-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 22h18" />
+                <path d="M6 18v-7" />
+                <path d="M10 18v-7" />
+                <path d="M14 18v-7" />
+                <path d="M18 18v-7" />
+                <path d="M12 2 20 7H4z" />
+              </svg>
+            </div>
+            <h3>대출 부담 감소</h3>
+            <p>차입 규모가 줄어 매달 나가는 이자와 상환 압박이 가벼워집니다.</p>
+          </article>
+          <article class="use-card reveal">
+            <div class="use-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 7 13.5 15.5 8.5 10.5 2 17" />
+                <path d="M16 7h6v6" />
+              </svg>
+            </div>
+            <h3>빠른 손익분기점</h3>
+            <p>투자금이 작고 이용한 만큼만 정산해 손익분기점(BEP)에 더 빨리 도달합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PLAN STRUCTURE ================= -->
+    <section class="section" id="plan">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="kicker">03 · HOW IT WORKS</p>
+          <h2>라운딩 요금제는<br /><span class="grad">이렇게 운영됩니다</span></h2>
+          <p class="section__desc">기기값을 한 번에 내는 대신, 손님이 이용한 만큼만 <span class="nowrap">인당 500원</span>으로
+            정산합니다.<br />매장이 바쁠수록 함께 성장하는 구조입니다.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__no">STEP 1</span>
+            <h3>시스템 990만원 공급</h3>
+            <p>커넥트 총판이 마이파크 시스템을 기기당 990만원에 공급·설치합니다.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">STEP 2</span>
+            <h3>매장 오픈 &amp; 라운딩</h3>
+            <p>고객은 평소처럼 마이파크 코스에서 라운딩을 즐깁니다.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">STEP 3</span>
+            <h3>인당 요금 정산</h3>
+            <p>이용 고객 인당 500원, 손님이 이용한 만큼만 정산합니다.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">STEP 4</span>
+            <h3>운영 지원</h3>
+            <p>설치부터 교육·사후관리까지 매장 운영을 함께합니다.</p>
+          </li>
+        </ol>
+
+        <div class="table-wrap reveal">
+          <table class="cmp-table" id="plan-table">
+            <thead>
+              <tr>
+                <th scope="col">구분</th>
+                <th scope="col">기존 구매형</th>
+                <th scope="col" class="hl">마이파크 라운딩 요금제</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">시스템 기기 가격</th>
+                <td>2,300만원 / 대</td>
+                <td class="hl"><b>990만원</b> / 대</td>
+              </tr>
+              <tr>
+                <th scope="row">10대 기준 시스템 비용</th>
+                <td>2억 3,000만원</td>
+                <td class="hl"><b>9,900만원</b></td>
+              </tr>
+              <tr>
+                <th scope="row">과금 방식</th>
+                <td>기기 일시 구매</td>
+                <td class="hl">이용 인원별 <b>인당 정산</b></td>
+              </tr>
+              <tr>
+                <th scope="row">이용 요금</th>
+                <td>—</td>
+                <td class="hl">인당 <b>500원</b></td>
+              </tr>
+              <tr>
+                <th scope="row">초기 투자 부담</th>
+                <td>높음</td>
+                <td class="hl">10대 기준 <b class="nowrap">1억 3,100만원 ↓</b></td>
+              </tr>
+              <tr>
+                <th scope="row">공급 조건</th>
+                <td>—</td>
+                <td class="hl">선착순 <b>200대 한정</b></td>
+              </tr>
+              <tr>
+                <th scope="row">공급 · 지원</th>
+                <td>—</td>
+                <td class="hl">총판 직접 지원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SIMULATOR ================= -->
+    <section class="section section--alt" id="simulator">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="kicker">04 · SIMULATOR</p>
+          <h2>내 매장은 얼마나<br /><span class="grad">아낄 수 있을까?</span></h2>
+          <p class="section__desc">설치할 시스템 기기 대수를 조절해 보세요.<br />시스템 기기 비용 기준 절감액을 바로 계산해 드립니다.</p>
+        </header>
+
+        <div class="sim reveal">
+          <div class="sim__control">
+            <label for="sim-rooms" class="sim__label">설치 기기 수</label>
+            <div class="sim__rooms"><span id="sim-rooms-val">10</span><small>대</small></div>
+            <input type="range" id="sim-rooms" min="2" max="20" value="10" step="1" />
+            <div class="sim__ticks"><span>2</span><span>20</span></div>
+
+            <div class="sim__rooms-visual" id="sim-visual" aria-hidden="true"></div>
+          </div>
+
+          <div class="sim__result">
+            <div class="sim__line">
+              <span>기존 시스템 비용</span>
+              <strong class="muted strike-text" id="sim-old">2억 3,000만원</strong>
+            </div>
+            <div class="sim__line">
+              <span>라운딩 요금제 시스템 비용</span>
+              <strong id="sim-new">9,900만원</strong>
+            </div>
+            <div class="sim__divider"></div>
+            <div class="sim__save">
+              <span>절감액</span>
+              <strong id="sim-save">1억 3,100만원</strong>
+            </div>
+            <div class="sim__bar">
+              <div class="sim__bar-fill" id="sim-bar"></div>
+            </div>
+            <p class="sim__foot">* 시스템 기기 비용만 비교한 금액이며, 인테리어·설비 비용은 별도입니다.<br />라운딩 요금제는 선착순 200대 한정입니다.</p>
+            <a href="#contact" class="btn btn--primary btn--block" id="sim-cta">이 조건으로 상담받기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY CONNECT ================= -->
+    <section class="section" id="why">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="kicker">05 · OFFICIAL DISTRIBUTOR</p>
+          <h2>마이파크 공식 총판,<br /><span class="grad">커넥트</span>가 함께합니다</h2>
+          <p class="section__desc">상권 검토부터 시스템 설치, 오픈 후 운영까지.<br />커넥트가 라운딩 요금제 매장의 든든한 파트너가 되어 드립니다.</p>
+        </header>
+
+        <div class="why__card reveal">
+          <div class="why__lockup">
+            <img src="img/mypark_logo.png" alt="MyPark" class="logo-white why__mypark" />
+            <span class="why__x" aria-hidden="true">×</span>
+            <img src="img/connect_logo.png" alt="CONNECT" class="why__connect" />
+          </div>
+          <p class="why__caption">MYPARK OFFICIAL DISTRIBUTOR</p>
+
+          <ul class="why__grid">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <strong>창업 컨설팅</strong>
+              <span>상권·평수별 맞춤 상담</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+              <strong>공급 · 설치</strong>
+              <span>시스템 공급부터 설치까지 일괄 진행</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+              </svg>
+              <strong>교육 · 사후관리</strong>
+              <span>매장 운영 교육과 사후관리 지원</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
+                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11" />
+              </svg>
+              <strong>투명 정산</strong>
+              <span>이용 고객 인당 500원 정산</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section section--alt" id="faq">
+      <div class="container container--narrow">
+        <header class="section__head reveal">
+          <p class="kicker">06 · FAQ</p>
+          <h2>자주 묻는 질문</h2>
+        </header>
+        <div class="faq">
+          <details class="faq__item reveal" id="faq-1">
+            <summary>라운딩 요금제는 기존 마이파크와 같은 시스템인가요?</summary>
+            <p>네.<br />동일한 마이파크 스크린파크골프 시스템이며, 기기 가격과 과금 방식만 다릅니다.<br />기기는 990만원에 공급받고, 이후 이용 고객 인당 500원이 과금됩니다.</p>
+          </details>
+          <details class="faq__item reveal" id="faq-2">
+            <summary>이용 요금은 어떻게 되나요?</summary>
+            <p>이용 고객 인당 500원입니다.<br />기기값을 미리 다 내는 대신, 손님이 이용한 만큼만 정산하는 구조입니다.</p>
+          </details>
+          <details class="faq__item reveal" id="faq-3">
+            <summary>10대가 아니어도 신청할 수 있나요?</summary>
+            <p>물론입니다.<br />10대는 이해를 돕기 위한 기준 예시이며, 매장 규모에 맞춰 필요한 대수만큼 구성할 수 있습니다.<br />위 계산기로 대수별 절감액을 확인해 보세요.</p>
+          </details>
+          <details class="faq__item reveal" id="faq-5">
+            <summary>‘200대 한정’은 무슨 뜻인가요?</summary>
+            <p>기기당 990만원의 라운딩 요금제 조건은 선착순 200대까지만 공급됩니다.<br />한정 수량이 소진되면 조기 마감될 수 있습니다.</p>
+          </details>
+          <details class="faq__item reveal" id="faq-4">
+            <summary>기존 매장도 라운딩 요금제로 전환하거나 기기를 증설할 수 있나요?</summary>
+            <p>매장 상황에 따라 증설·전환 방안을 검토해 드립니다.<br />현재 운영 현황을 알려 주시면 맞춤 안내해 드립니다.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__copy reveal">
+          <p class="kicker">CONTACT</p>
+          <h2>2억 3천이 아닌<br /><span class="grad">9,900만원</span>으로<br />시작하세요</h2>
+          <p class="section__desc">상담 신청을 남겨 주시면 담당자가 빠르게 연락드리겠습니다.</p>
+        </div>
+
+        <form class="form reveal" id="contact-form" novalidate>
+          <div class="form__head">
+            <h3>무료 상담 신청</h3>
+            <p>간단한 정보를 남겨주시면 담당자가 빠르게 연락드리겠습니다.</p>
+          </div>
+          <div class="form__row">
+            <label for="f-name">성함 <i class="req" aria-hidden="true">*</i></label>
+            <input type="text" id="f-name" name="name" placeholder="성함을 입력해 주세요" autocomplete="name" required />
+          </div>
+          <div class="form__row">
+            <label for="f-phone">연락처 <i class="req" aria-hidden="true">*</i></label>
+            <input type="tel" id="f-phone" name="phone" placeholder="'-' 없이 숫자만 입력해 주세요" inputmode="numeric"
+              autocomplete="tel" maxlength="11" required />
+          </div>
+          <div class="form__row">
+            <span class="form__label">개인정보 처리방침 및 동의 <i class="req" aria-hidden="true">*</i></span>
+            <div class="form__policy" tabindex="0" aria-label="개인정보 수집 및 이용 안내">
+              <p><b>[개인정보 수집 및 이용 안내]</b></p>
+              <p>1. 수집 주체 : 주식회사 커넥트</p>
+              <p>2. 수집 항목 : 성함, 연락처</p>
+              <p>3. 수집 목적 : 마이파크 창업 상담, 견적 안내 및 관련 혜택 정보 안내</p>
+              <p>4. 보유 및 이용 기간 : 상담 완료 후 1년 (관계 법령에 따라 보존이 필요한 경우 해당 기간까지)</p>
+              <p>5. 동의를 거부할 권리가 있으며, 거부 시 상담 신청이 제한될 수 있습니다.</p>
+            </div>
+          </div>
+          <label class="form__agree" for="f-agree">
+            <input type="checkbox" id="f-agree" required />
+            <span>위 개인정보 수집 및 이용에 동의합니다. <em>(필수)</em></span>
+          </label>
+          <label class="form__agree" for="f-marketing">
+            <input type="checkbox" id="f-marketing" name="marketing" />
+            <span>마케팅 및 창업 혜택 정보 수신에 동의합니다. <em>(선택)</em></span>
+          </label>
+          <input type="text" name="_hp" id="f-hp" class="form__hp" tabindex="-1" autocomplete="off"
+            aria-hidden="true" />
+          <button type="submit" class="btn btn--primary btn--block" id="f-submit">무료 상담 신청하기</button>
+          <p class="form__msg" id="form-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <img src="img/connect_logo.png" alt="CONNECT" class="footer__connect" />
+        <!-- 공지사항 · 이용약관 · 개인정보처리방침 · 고객센터 링크 자리 (추후 추가) -->
+        <nav class="footer__links" aria-label="푸터 메뉴"></nav>
+      </div>
+      <div class="footer__info">
+        <p>
+          <span>주식회사 커넥트</span>
+          <span>대표이사 김태익</span>
+          <span class="footer__br">사업자등록번호 393-86-03806</span>
+        </p>
+        <p>
+          <span>경기도 광명시 오리로 756번길 21, 5층 24호</span>
+        </p>
+        <p>
+          <span>TEL : <a href="tel:01056477357">010-5647-7357</a></span>
+          <span>EMAIL : <a href="mailto:ceo@connect-ai.kr">ceo@connect-ai.kr</a></span>
+        </p>
+        <p class="footer__copy">© 2026 CONNECT Co., Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

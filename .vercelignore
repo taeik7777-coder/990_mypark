@@ -1,0 +1,12 @@
+# 배포에서 제외 (사이트에서 사용하지 않는 파일)
+google-apps-script/
+*.md
+img/connect_ci_only.png
+img/connect_color_ci1.png
+img/connect_color_ci2.png
+img/connect_favi.png
+img/connect_symbol.png
+img/hero_mypark.jpg
+img/hero_mypark.png
+img/hero_room.png
+img/MYPARK_LOGO_BLACK.png
