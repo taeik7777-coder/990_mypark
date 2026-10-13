@@ -13,6 +13,10 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const easeOut = (t) => 1 - Math.pow(1 - t, 4);
+  // 금액 카운트용: 끝부분에서 너무 오래 멈추지 않도록 조금 완만한 감속
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+  // 카운트 중 표시 단위(10만원) – 1억 → 9,900만 구간이 끊기지 않고 자연스럽게 이어짐
+  const stepRound = (v) => Math.round(v / 10) * 10;
 
   /** 만원 단위 숫자를 "1억 9,500만원" 형태로 변환 */
   const fmtKRW = (manwon, suffix = '원') => {
@@ -24,11 +28,11 @@
     return `${rest.toLocaleString('ko-KR')}만${suffix}`;
   };
 
-  const animate = (from, to, duration, onUpdate, onDone) => {
+  const animate = (from, to, duration, onUpdate, onDone, ease = easeOut) => {
     const start = performance.now();
     const tick = (now) => {
       const t = Math.min((now - start) / duration, 1);
-      onUpdate(from + (to - from) * easeOut(t));
+      onUpdate(from + (to - from) * ease(t));
       if (t < 1) requestAnimationFrame(tick);
       else onDone && onDone();
     };
@@ -88,12 +92,11 @@
     setTimeout(() => {
       meter.style.width = `${(to / from) * 100}%`;
       animate(from, to, 2200, (v) => {
-        // 카운트 중엔 100만 단위로 끊어 자연스럽게
-        el.innerHTML = fmtKRWHtml(Math.round(v / 100) * 100);
+        el.innerHTML = fmtKRWHtml(stepRound(v));
       }, () => {
         el.innerHTML = fmtKRWHtml(to);
         card.classList.add('is-done'); // 최종 가격 강조 연출
-      });
+      }, easeOutCubic);
     }, 900);
   }
 
@@ -106,11 +109,11 @@
       box.classList.add('is-cut');
       label.textContent = '시스템 10대 · 대당 990만';
       animate(from, to, 1500, (v) => {
-        total.textContent = fmtKRW(Math.round(v / 100) * 100, ' 원');
+        total.textContent = fmtKRW(stepRound(v), ' 원');
       }, () => {
         total.textContent = fmtKRW(to, ' 원');
         box.classList.add('is-done');
-      });
+      }, easeOutCubic);
     }, 1100);
   }
 
