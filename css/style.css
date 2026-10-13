@@ -1383,12 +1383,6 @@ input[type="range"]::-moz-range-thumb {
   color: var(--text-mute);
 }
 
-.strike-text {
-  text-decoration: line-through;
-  text-decoration-color: var(--red);
-  text-decoration-thickness: 2px;
-}
-
 .sim__divider {
   height: 1px;
   background: var(--border-strong);
