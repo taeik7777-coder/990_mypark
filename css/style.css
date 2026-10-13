@@ -608,7 +608,7 @@ dd {
   margin-top: 20px;
   padding-top: 18px;
   border-top: 1px dashed var(--border-strong);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--text);
 }
@@ -2170,7 +2170,7 @@ input[type="range"]::-moz-range-thumb {
   .drop-card__limit {
     margin-top: 14px;
     padding-top: 12px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .bar {
