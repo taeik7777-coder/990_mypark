@@ -439,8 +439,8 @@ dd {
   right: 0;
   height: 4px;
   border-radius: 4px;
-  background: linear-gradient(90deg, #ff8a7a, var(--red));
-  box-shadow: 0 0 10px rgba(255, 107, 107, .5);
+  background: linear-gradient(90deg, #ff3b30, #e5141e);
+  box-shadow: 0 0 10px rgba(240, 30, 30, .5);
   transform-origin: left;
   transform: scaleX(0);
 }
@@ -620,7 +620,7 @@ dd {
   left: var(--pct, 43.04%);
   transform: translateX(-50%);
   white-space: nowrap;
-  color: var(--amber);
+  color: var(--lime);
   font-weight: 700;
   opacity: 0;
   transition: opacity .5s;
@@ -829,8 +829,8 @@ dd {
   top: 60%;
   height: 7px;
   border-radius: 6px;
-  background: linear-gradient(90deg, #ff8a7a, var(--red));
-  box-shadow: 0 0 14px rgba(255, 107, 107, .55), 0 2px 0 rgba(0, 0, 0, .25);
+  background: linear-gradient(90deg, #ff3b30, #e5141e);
+  box-shadow: 0 0 14px rgba(240, 30, 30, .55), 0 2px 0 rgba(0, 0, 0, .25);
   transform-origin: left;
   transform: scaleX(0);
 }
