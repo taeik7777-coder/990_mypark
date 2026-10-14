@@ -406,15 +406,16 @@ dd {
   display: inline-block;
   font-family: var(--font-num);
   font-weight: 800;
-  font-size: 40px;
+  font-size: clamp(23px, 2.7vw, 40px);
   color: #a9b9b0;
   line-height: 1.05;
   letter-spacing: -.02em;
+  white-space: nowrap;
   transition: color .6s;
 }
 
 .old-price .num {
-  font-size: 76px;
+  font-size: clamp(44px, 5.2vw, 76px);
 }
 
 .drop-card.is-in .old-price {
@@ -2224,15 +2225,15 @@ input[type="range"]::-moz-range-thumb {
   }
 
   .counter {
-    font-size: 46px;
+    font-size: clamp(38px, 11.5vw, 46px);
   }
 
   .old-price .num {
-    font-size: 46px;
+    font-size: clamp(38px, 11.5vw, 46px);
   }
 
   .old-price {
-    font-size: 24px;
+    font-size: clamp(20px, 6vw, 24px);
   }
 
   .drop-card__save {
