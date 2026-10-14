@@ -863,7 +863,8 @@ dd {
   border-color: rgba(184, 242, 92, .45);
 }
 
-.price-card--new .price-card__value .num {
+.price-card--new .price-card__value {
+  display: inline-block;
   background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
