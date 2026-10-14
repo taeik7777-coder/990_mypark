@@ -32,6 +32,7 @@
     'hero-cta-contact': '히어로_무료상담',
     'hero-cta-sim': '히어로_절감액계산',
     'sim-cta': '계산기_상담받기',
+    'stock-cta': '잔여수량_상담받기',
   };
   Object.entries(CTA_LABELS).forEach(([id, label]) => {
     const btn = document.getElementById(id);
@@ -73,10 +74,43 @@
   $('#nav-toggle').addEventListener('click', () => nav.classList.toggle('is-open'));
   $$('.nav__links a').forEach((a) => a.addEventListener('click', () => nav.classList.remove('is-open')));
 
+  // 주소창에 #top 등이 붙지 않도록 깔끔한 스크롤 처리
+  if (location.hash === '#top') {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  $$('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const hash = a.getAttribute('href');
+      if (!hash || hash === '#') return;
+      const target = hash === '#top' ? document.body : $(hash);
+      if (!target) return;
+      e.preventDefault();
+      if (hash === '#top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+    });
+  });
+
+  // ---- Live Stock (05): HTML에 적힌 숫자를 목표값으로 읽고, 200 미만이면 200에서 시작하도록 초기화 ----
+  const stockNumEl = $('#stock-num');
+  const STOCK_TOTAL = 200;
+  let stockTarget = STOCK_TOTAL;
+  if (stockNumEl) {
+    const parsed = parseInt(stockNumEl.textContent.replace(/\D/g, ''), 10);
+    if (!Number.isNaN(parsed)) stockTarget = Math.max(0, Math.min(STOCK_TOTAL, parsed));
+    if (stockTarget < STOCK_TOTAL) stockNumEl.textContent = STOCK_TOTAL;
+  }
+
   // ---- Reveal + one-shot triggers ----
   const triggers = new Map([
     ['hero-drop-card', heroCountdown],
     ['compare-chart', compareCut],
+    ['stock-board', stockCountdown],
   ]);
 
   const io = new IntersectionObserver((entries) => {
@@ -144,6 +178,18 @@
         box.classList.add('is-done');
       }, easeOutCubic);
     }, 1100);
+  }
+
+  // ---- Live Stock (05): 200 미만일 때 200에서 설정된 숫자까지 줄어드는 애니메이션 ----
+  function stockCountdown() {
+    if (!stockNumEl || stockTarget >= STOCK_TOTAL) return;
+    setTimeout(() => {
+      animate(STOCK_TOTAL, stockTarget, 1800, (v) => {
+        stockNumEl.textContent = Math.round(v);
+      }, () => {
+        stockNumEl.textContent = stockTarget;
+      }, easeOutCubic);
+    }, 400);
   }
 
   // 990만원 · 13,100만원 숫자는 카운트 없이 CSS(.num-pop)로 간단히 등장

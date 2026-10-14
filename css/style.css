@@ -1468,6 +1468,60 @@ input[type="range"]::-moz-range-thumb {
   margin-bottom: 28px;
 }
 
+/* ---------- Live Stock (05) ---------- */
+#stock .section__head {
+  margin-bottom: 36px;
+}
+
+.stock {
+  text-align: center;
+}
+
+.stock__figure {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-family: var(--font-num);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: .9;
+}
+
+.stock__num {
+  font-size: clamp(80px, 12vw, 168px);
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+  padding: .12em .06em .06em 0;
+  margin: -.12em -.06em -.06em 0;
+}
+
+.stock__figure em {
+  font-style: normal;
+  font-family: var(--font);
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 800;
+  margin-left: 8px;
+  color: var(--lime);
+}
+
+.stock__total {
+  font-family: var(--font-num);
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--text-mute);
+  margin-left: 16px;
+}
+
+.stock__note {
+  margin-top: 28px;
+  font-size: 14.5px;
+  color: var(--text-mute);
+}
+
 /* ---------- Why ---------- */
 /* 공식 총판 카드: 인게임 배경 위에 MyPark × CONNECT 로고 + 지원 항목 4가지 */
 .why__card {
